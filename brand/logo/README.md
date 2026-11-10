@@ -1,29 +1,21 @@
-# MITRA Wellbeing – logo, novi početak (3. krug)
+# MITRA – znak (4. krug: jednostavno)
 
-Deset skica u potpuno različitim stilovima. Služe za odabir smjera, a izabrani smjer zatim se razrađuje do kraja.
-Raniji prijedlozi (1. i 2. krug) ostaju u git povijesti.
+Cilj: jedan jednostavan znak koji se pamti na prvi pogled i radi u jednoj boji, na majici, kapi, opremi i kao ikona aplikacije, uz čvrst logotip MITRA.
 
-| # | Skica | Dojam |
-|---|---|---|
-| 1 | Serif | mirno, premium, wellness |
-| 2 | Atletski | snažno, sportski, dinamično |
-| 3 | Pečat | klasično, ozbiljno, stručno |
-| 4 | Kettlebell | trening, snaga, oprema |
-| 5 | Pokret | kineziologija, figura u iskoraku s kettlebellom |
-| 6 | Kamenje | ravnoteža, oporavak, priroda |
-| 7 | Staza | dugoročni put, priroda (kao naslovna slika stranice) |
-| 8 | Aplikacija | moderno, digitalno, pristupačno |
-| 9 | Krugovi | povezanost trenera i vježbača |
-| 10 | Potpis | osobni brend, autor programa |
+| Znak | Ideja |
+|---|---|
+| **Zamah** | nagnuto slovo *i* iz imena MITRA, ujedno čovjek nagnut naprijed u pokretu; izvedeno iz dijagonale i točke postojeće oznake |
+| **Vrh** | jedan šiljak i točka: čovjek koji čvrsto stoji, vrh, slovo A |
+| **Blok** | puni blok s V-urezom odozgo, slovo M koje se može izvesti na bilo čemu |
+| **Dva luka** | dva luka s glavama: slovo m i dvoje ljudi jedno uz drugo (*mitra* = prijatelj) |
 
-Datoteke su u `skice/` (SVG, tekst pretvoren u krivulje).
+Datoteke u `svg/` (tekst pretvoren u krivulje):
+`mitra-<znak>-znak-*`, `-logo-*` (vodoravno), `-vertikalni-*`, u varijantama `crni`, `bijeli`, `navy`, te `-ikona.svg` (512 px).
 
-## Ponovno generiranje
-
-Fontovi (Google Fonts, OFL): Manrope, Fraunces, Barlow Condensed (Bold, ExtraBold Italic), Mr Dafoe, Outfit.
+Ponovno generiranje (Manrope, Google Fonts):
 
 ```bash
 pip install fonttools
 cd brand/logo/src
-FONT_DIR=/put/do/fontova python3 sk.py ../skice
+FONT_DIR=/put/do/fontova python3 build.py ../svg
 ```
