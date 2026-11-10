@@ -1,38 +1,29 @@
-# MITRA Wellbeing – logo (2. krug)
+# MITRA Wellbeing – logo, novi početak (3. krug)
 
-Novi smjerovi nakon prvog kruga (Progresija, Iskorak, Ciklus su u git povijesti).
-Polazište: *mitra* znači **prijatelj**. Ovo je program u kojem kineziolog vodi i prati čovjeka kroz održiv trening, a ne izazov u kojem je čovjek sam.
+Deset skica u potpuno različitim stilovima. Služe za odabir smjera, a izabrani smjer zatim se razrađuje do kraja.
+Raniji prijedlozi (1. i 2. krug) ostaju u git povijesti.
 
-| Boja | HEX |
-|---|---|
-| Navy | `#0B1F33` |
-| Zlatna (naglasak) | `#BFA46A` |
-| Krem | `#F7F3EA` |
+| # | Skica | Dojam |
+|---|---|---|
+| 1 | Serif | mirno, premium, wellness |
+| 2 | Atletski | snažno, sportski, dinamično |
+| 3 | Pečat | klasično, ozbiljno, stručno |
+| 4 | Kettlebell | trening, snaga, oprema |
+| 5 | Pokret | kineziologija, figura u iskoraku s kettlebellom |
+| 6 | Kamenje | ravnoteža, oporavak, priroda |
+| 7 | Staza | dugoročni put, priroda (kao naslovna slika stranice) |
+| 8 | Aplikacija | moderno, digitalno, pristupačno |
+| 9 | Krugovi | povezanost trenera i vježbača |
+| 10 | Potpis | osobni brend, autor programa |
 
-Pismo: **Manrope** (kao na stranici). U SVG datotekama tekst je pretvoren u krivulje.
-
-## Smjerovi
-
-- **Prijatelji (preporuka):** slovo M čine dvije figure jedna uz drugu, trener (navy) i vježbač (zlatna). Ime, odnos i čovjek u jednom znaku.
-- **Ritam:** malo slovo m kao miran ritam opterećenja i oporavka. Drugi luk je viši, kao napredak iz mjeseca u mjesec. Uz znak ide logotip malim slovima, topliji i pristupačniji.
-- **Riječ:** samo logotip. Iznad slova I u MITRA stoji zlatna točka, čovjek unutar imena. Najmirnije i najprofinjenije rješenje.
-
-## Datoteke
-
-| Datoteka | Namjena |
-|---|---|
-| `*-horizontalni.svg` / `*-logotip.svg` | zaglavlje stranice, e-mail potpis, dokumenti |
-| `*-vertikalni.svg` | naslovnice, plakati, odjeća |
-| `*-znak.svg` | samo znak |
-| `*-inverse.svg` | za tamnu (navy) pozadinu |
-| `*-ikona.svg` | ikona aplikacije, favicon, profilna slika |
-
-`png/` sadrži iste datoteke kao PNG s prozirnom pozadinom (ikone 1024 × 1024 px, ostalo u 4× rezoluciji).
+Datoteke su u `skice/` (SVG, tekst pretvoren u krivulje).
 
 ## Ponovno generiranje
+
+Fontovi (Google Fonts, OFL): Manrope, Fraunces, Barlow Condensed (Bold, ExtraBold Italic), Mr Dafoe, Outfit.
 
 ```bash
 pip install fonttools
 cd brand/logo/src
-MANROPE_TTF=/put/do/Manrope[wght].ttf python3 build.py ../svg
+FONT_DIR=/put/do/fontova python3 sk.py ../skice
 ```
