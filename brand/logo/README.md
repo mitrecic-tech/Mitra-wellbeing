@@ -1,7 +1,7 @@
-# MITRA Wellbeing – logo
+# MITRA Wellbeing – logo (2. krug)
 
-Tri prijedloga loga izrađena na temelju sadržaja stranice [mitrawellbeing.com](https://www.mitrawellbeing.com/).
-Boje i pismo preuzeti su sa stranice.
+Novi smjerovi nakon prvog kruga (Progresija, Iskorak, Ciklus su u git povijesti).
+Polazište: *mitra* znači **prijatelj**. Ovo je program u kojem kineziolog vodi i prati čovjeka kroz održiv trening, a ne izazov u kojem je čovjek sam.
 
 | Boja | HEX |
 |---|---|
@@ -9,25 +9,23 @@ Boje i pismo preuzeti su sa stranice.
 | Zlatna (naglasak) | `#BFA46A` |
 | Krem | `#F7F3EA` |
 
-Pismo: **Manrope** (ExtraBold za MITRA, SemiBold za WELLBEING). U SVG datotekama tekst je pretvoren u krivulje.
+Pismo: **Manrope** (kao na stranici). U SVG datotekama tekst je pretvoren u krivulje.
 
-## Koncepti
+## Smjerovi
 
-- **B · Progresija (preporuka):** slovo M kao krivulja opterećenja koja raste, strelica prema gore i zlatna točka (čovjek). Najbolje se čita u malim veličinama.
-- **A · Iskorak:** dorađena postojeća oznaka sa stranice (struktura, tlo, pokret, glava).
-- **C · Ciklus:** prsten od 4 segmenta (4-tjedni ciklus) i 3 rastuća stupca (3 treninga tjedno).
+- **Prijatelji (preporuka):** slovo M čine dvije figure jedna uz drugu, trener (navy) i vježbač (zlatna). Ime, odnos i čovjek u jednom znaku.
+- **Ritam:** malo slovo m kao miran ritam opterećenja i oporavka. Drugi luk je viši, kao napredak iz mjeseca u mjesec. Uz znak ide logotip malim slovima, topliji i pristupačniji.
+- **Riječ:** samo logotip. Iznad slova I u MITRA stoji zlatna točka, čovjek unutar imena. Najmirnije i najprofinjenije rješenje.
 
 ## Datoteke
 
-Za svaki koncept (`iskorak`, `progresija`, `ciklus`):
-
 | Datoteka | Namjena |
 |---|---|
-| `mitra-<koncept>-horizontalni.svg` | zaglavlje stranice, e-mail potpis, dokumenti |
-| `mitra-<koncept>-vertikalni.svg` | naslovnice, plakati, odjeća |
-| `mitra-<koncept>-znak.svg` | samo znak |
-| `*-inverse.svg` | verzija za tamnu (navy) pozadinu |
-| `mitra-<koncept>-ikona.svg` | ikona aplikacije, favicon, profilna slika na društvenim mrežama |
+| `*-horizontalni.svg` / `*-logotip.svg` | zaglavlje stranice, e-mail potpis, dokumenti |
+| `*-vertikalni.svg` | naslovnice, plakati, odjeća |
+| `*-znak.svg` | samo znak |
+| `*-inverse.svg` | za tamnu (navy) pozadinu |
+| `*-ikona.svg` | ikona aplikacije, favicon, profilna slika |
 
 `png/` sadrži iste datoteke kao PNG s prozirnom pozadinom (ikone 1024 × 1024 px, ostalo u 4× rezoluciji).
 
@@ -38,4 +36,3 @@ pip install fonttools
 cd brand/logo/src
 MANROPE_TTF=/put/do/Manrope[wght].ttf python3 build.py ../svg
 ```
-Naredbu pokreni iz mape `brand/logo/src` (skripta učitava `marks.py` i `typo.py`).
