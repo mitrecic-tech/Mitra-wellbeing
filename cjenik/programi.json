@@ -1,34 +1,21 @@
 {
-  "_napomena": "PRIMJER – zamijeni stvarnim podacima. Cijene u eurima, s PDV-om ako si u sustavu PDV-a.",
-
   "trgovac": {
     "vrsta": "fizicka",
-    "_vrsta_opis": "'pravna' (d.o.o., j.d.o.o.) -> OIB; 'fizicka' (obrt) -> matični broj (MBO)",
-    "identifikator": "00000000"
+    "_vrsta_opis": "'pravna' (d.o.o., j.d.o.o.) -> OIB; 'fizicka' (obrt) -> matični broj obrta (MBO)",
+    "oib": "43025945441",
+    "mbo": ""
   },
 
   "usluge": [
     {
-      "naziv": "Online program treninga – 8 tjedana",
-      "cijena": 120.00,
-      "bazna_cijena": 120.00,
-      "jedinica": "",
-      "opis": "Plan treninga, video upute i tjedna provjera napretka."
-    },
-    {
-      "naziv": "Online program treninga – 12 tjedana",
-      "cijena": 160.00,
-      "bazna_cijena": 160.00,
-      "jedinica": "",
-      "akcija": { "naziv": "Akcija", "cijena": 129.00 },
-      "opis": "Primjer usluge na akciji."
-    },
-    {
-      "naziv": "Mjesečna pretplata – online treninzi",
-      "cijena": 35.00,
-      "bazna_cijena": 30.00,
+      "naziv": "MITRA Wellbeing program – mjesečna pretplata",
+      "naziv_en": "MITRA Wellbeing program – monthly subscription",
+      "cijena": 129.00,
+      "bazna_cijena": 129.00,
       "jedinica": "/mj.",
-      "opis": "Primjer usluge kojoj je cijena podignuta nakon 10. 9. 2026."
+      "jedinica_en": "/month",
+      "opis": "12 strukturiranih treninga mjesečno (3 tjedno), video upute, praćenje opterećenja i oporavka, podrška u aplikaciji.",
+      "opis_en": "12 structured workouts a month (3 per week), video guidance, load and recovery tracking, in-app support."
     }
   ]
 }

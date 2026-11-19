@@ -4,30 +4,29 @@ Usklađeno s Pravilnikom o isticanju bazne cijene proizvoda i Pravilnikom o nač
 
 ## Postupak
 
-1. U `programi.json` upiši:
-   - `trgovac.vrsta`: `"fizicka"` (obrt, koristi matični broj obrta) ili `"pravna"` (d.o.o., koristi OIB)
-   - `trgovac.identifikator`: MBO ili OIB
-   - za svaku uslugu: `naziv`, `cijena`, `bazna_cijena`, po želji `jedinica` (npr. `"/mj."`), `opis` i `akcija` (`{"naziv": "Akcija", "cijena": 99.00}`)
+1. Podatke uređuješ samo u `programi.json`:
+   - `trgovac.mbo`: matični broj obrta. Pravilnik za obrt (trgovac – fizička osoba) u nazivu datoteke traži matični broj. Dok je `mbo` prazan, koristi se OIB i ispisuje se upozorenje.
+   - za svaku uslugu: `naziv`, `cijena`, `bazna_cijena`, `jedinica`, `opis`, te engleske inačice (`*_en`). Po potrebi i `akcija`: `{"naziv": "Akcija", "cijena": 99.00}`.
 2. Pokreni:
    ```bash
    python3 cjenik/generiraj.py
    ```
-3. Postavi na stranicu sve iz `cjenik/izlaz/`:
-   - `cjenik.html` na stalnu adresu, npr. `/cjenik`. Sadrži tablicu i poveznice na važeću te arhivske CSV datoteke.
-   - CSV datoteke u istu mapu kao `cjenik.html`. Ne smiju biti iza prijave ni zaštite od botova (čl. 5.).
-   - Kod iz `cijena-blok.html` ubaci na stranicu s programima, gdje kupac vidi cijenu.
+3. Prenesi izlaz u projekt stranice (React/Vite na Vercelu):
+   - **Mapu `izlaz/public/cjenik/` kopiraj u `public/cjenik/`.** Stranica će biti dostupna na `https://www.mitrawellbeing.com/cjenik/`, uključujući važeću i arhivske CSV datoteke. Ne smije biti iza prijave ni zaštite od botova (čl. 5.).
+   - **`izlaz/PriceBlock.jsx` kopiraj u `src/components/`.** U odjeljku Pricing stavi `<PriceBlock lang="en" />`, a na hrvatskoj inačici `<PriceBlock lang="hr" />`. Ako stranica nije u Reactu, koristi `cijena-blok.html` ili `cijena-blok.en.html`.
+   - Objavi (deploy).
 
-Kod svake promjene cijene ponovi korake 2 i 3 **do 11:00 istog dana**. Skripta tada napravi novu CSV datoteku (sljedeći broj pohrane i nova vremenska oznaka), a staru 15 dana prikazuje kao arhivsku. Datoteke starije od toga možeš obrisati sa servera.
+Kad promijeniš cijenu, ponovi korake 1–3 **do 11:00 istog dana**. Skripta tada napravi novu CSV datoteku (sljedeći broj pohrane i nova vremenska oznaka), a staru 15 dana prikazuje kao arhivsku. Zato pri kopiranju zadrži i stare CSV datoteke u `public/cjenik/`. One starije od 15 dana od zamjene možeš obrisati.
 
-## Kako odrediti baznu cijenu
+## Bazna cijena
 
 | Situacija | Bazna cijena |
 |---|---|
 | Usluga se nudila 10. 9. 2026. | Cijena koja je vrijedila 10. 9. 2026. |
-| 10. 9. 2026. je bila na akciji | Redovna cijena prije te akcije |
+| 10. 9. 2026. bila je na akciji | Redovna cijena prije te akcije |
 | Usluga je uvedena nakon 10. 9. 2026. | Cijena na dan uvođenja |
 
-Bazna cijena se ne mijenja kad mijenjaš cijenu. U cjenik ne ulaze cijene dogovorene s pojedinim klijentom (individualni coaching po mjeri), popusti za skupine kupaca ili za način plaćanja te dinamičke cijene (čl. 4.).
+Bazna cijena se ne mijenja kad mijenjaš cijenu. U cjenik ne ulaze cijene dogovorene s pojedinim klijentom, popusti za skupine kupaca ili za način plaćanja te dinamičke cijene (čl. 4.).
 
 ## Format CSV-a
 
@@ -35,4 +34,4 @@ Bazna cijena se ne mijenja kad mijenjaš cijenu. U cjenik ne ulaze cijene dogovo
 - Stupci: naziv usluge; maloprodajna cijena; je li u tijeku posebni oblik prodaje (DA/NE); naziv posebnog oblika prodaje; bazna cijena
 - Naziv datoteke: `<MBO|OIB>_ZA_SVA_PRODAJNA_MJESTA_USLUGE_<broj pohrane>_<GGGGMMDD_SSMM>.csv`
 
-Pravilnik ne propisuje točan zapis oznake „usluge" ni broja pohrane. Ovdje su odabrani `USLUGE` i redni broj.
+Pravilnik ne propisuje točan zapis oznake usluga ni broja pohrane. Ovdje su odabrani `USLUGE` i redni broj.
